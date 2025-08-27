@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.10">
   <model name="my_tiltwing">
-    <pose>0 0 0 0 0 0</pose>
+    <pose>0 0 0.5 0 0 0</pose>
     <link name="base_link">
       <inertial>
         <mass>5.0</mass>
@@ -64,7 +64,7 @@
       <child>prop1_link</child>
       <axis><xyz>0 0 1</xyz></axis>
     </joint>
-    <plugin name="motor1" filename="libgz-sim-motor-model-system.so">
+    <plugin name="motor1" filename="gz-sim8-motor-model-system">
       <jointName>prop1_joint</jointName>
       <turnDirection>ccw</turnDirection>
       <motorConstant>0.01</motorConstant>
@@ -89,7 +89,7 @@
       <child>prop2_link</child>
       <axis><xyz>0 0 1</xyz></axis>
     </joint>
-    <plugin name="motor2" filename="libgz-sim-motor-model-system.so">
+    <plugin name="motor2" filename="gz-sim8-motor-model-system">
       <jointName>prop2_joint</jointName>
       <turnDirection>cw</turnDirection>
       <motorConstant>0.01</motorConstant>
@@ -98,10 +98,10 @@
     <link name="imu_link">
       <pose>0 0 0 0 0 0</pose>
       <sensor name="imu_sensor" type="imu">
-        <plugin name="imu_plugin" filename="libgz-sim-imu-system.so"/>
+        <plugin name="imu_plugin" filename="gz-sim8-imu-system"/>
       </sensor>
     </link>
-    <plugin name="lift_drag" filename="libgz-sim-lift-drag-system.so">
+    <plugin name="lift_drag" filename="gz-sim8-lift-drag-system">
       <a0>0.1</a0>
       <cla>0.1</cla>
       <cla_stall>-0.5</cla_stall>
